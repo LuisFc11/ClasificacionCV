@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JobAI - Find Your Dream Job with AI-Powered Matching</title>
+    <link rel="stylesheet" href="/src/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+<!-- Header Responsive Mejorado -->
+<header class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center text-2xl font-extrabold text-indigo-600">
+        Job<span class="text-gray-800">AI</span>
+      </a>
+
+      <!-- Navegación Desktop -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="#" class="text-gray-700 hover:text-indigo-600 font-medium transition">Inicio</a>
+        <a href="src/empleos.html" class="text-gray-700 hover:text-indigo-600 font-medium transition">Empleos</a>
+        <a href="src/SubirCv.html" class="text-gray-700 hover:text-indigo-600 font-medium transition">Match con IA</a>
+      </nav>
+
+      <!-- Botones Desktop -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="#" class="px-4 py-2 rounded-md border border-indigo-600 text-indigo-600 hover:bg-indigo-50 transition font-medium">Iniciar sesión</a>
+        <a href="#" class="px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition font-medium">Registrarse</a>
+      </div>
+
+      <!-- Botón Menú Móvil -->
+      <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menú Móvil Elegante -->
+    <div id="mobile-menu" class="md:hidden hidden mt-2 bg-white shadow-lg rounded-xl transition-all duration-300 overflow-hidden">
+      <div class="px-6 py-4 space-y-3 text-center">
+        <a href="#" class="block text-gray-800 font-semibold hover:text-indigo-600 transition">Inicio</a>
+        <a href="src/empleos.html" class="block text-gray-800 font-semibold hover:text-indigo-600 transition">Empleos</a>
+        <a href="src/SubirCv.html" class="block text-gray-800 font-semibold hover:text-indigo-600 transition">Match con IA</a>
+      </div>
+      <div class="border-t border-gray-100 px-6 py-4 space-y-2">
+        <a href="#" class="block w-full text-center py-2 border border-indigo-600 text-indigo-600 rounded-md hover:bg-indigo-50 transition font-medium">Iniciar sesión</a>
+        <a href="#" class="block w-full text-center py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition font-medium">Registrarse</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-r from-indigo-600 to-indigo-800 text-white py-24">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center">
+      
+      <!-- Texto -->
+      <div class="md:w-1/2 mb-12 md:mb-0">
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+          Encuentra tu trabajo ideal con <span class="text-emerald-300">inteligencia artificial</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-200 mb-8">
+          Sube tu currículum y deja que nuestro sistema de IA te conecte con oportunidades que se ajustan a tu perfil.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="src/empleos.html" class="px-6 py-3 bg-white text-indigo-700 font-semibold rounded-lg hover:bg-gray-100 transition duration-200 shadow-md">
+            Buscar empleos
+          </a>
+          <a href="src/SubirCv.html" class="px-6 py-3 bg-emerald-500 text-white font-semibold rounded-lg hover:bg-emerald-600 transition duration-200 shadow-md">
+            Subir CV
+          </a>
+        </div>
+      </div>
+
+      <!-- Imagen -->
+      <div class="md:w-1/2 flex justify-center">
+        <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+             alt="Búsqueda de trabajo" 
+             class="rounded-2xl shadow-2xl max-w-full h-auto transition-transform duration-300 hover:scale-105"
+             style="max-height: 420px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Categories Mejorado -->
+<section class="py-20 bg-slate-50">
+  <div class="container mx-auto px-4 pt-10">
+    <h2 class="text-3xl font-extrabold text-center text-indigo-700 mb-12">Categorías de Empleo Populares</h2>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Cada categoría -->
+      <a href="#" class="bg-white rounded-xl p-6 text-center shadow-md hover:bg-indigo-50 transition animate-fade-in">
+        <div class="rounded-full bg-indigo-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg text-gray-800 mb-1">Tecnología</h3>
+        <p class="text-gray-500 text-sm">12,568 empleos</p>
+      </a>
+
+      <a href="#" class="bg-white rounded-xl p-6 text-center shadow-md hover:bg-indigo-50 transition animate-fade-in" style="animation-delay: 0.1s">
+        <div class="rounded-full bg-emerald-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg text-gray-800 mb-1">Finanzas</h3>
+        <p class="text-gray-500 text-sm">8,942 empleos</p>
+      </a>
+
+      <a href="#" class="bg-white rounded-xl p-6 text-center shadow-md hover:bg-indigo-50 transition animate-fade-in" style="animation-delay: 0.2s">
+        <div class="rounded-full bg-rose-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg text-gray-800 mb-1">Marketing</h3>
+        <p class="text-gray-500 text-sm">5,321 empleos</p>
+      </a>
+
+      <a href="#" class="bg-white rounded-xl p-6 text-center shadow-md hover:bg-indigo-50 transition animate-fade-in" style="animation-delay: 0.3s">
+        <div class="rounded-full bg-orange-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg text-gray-800 mb-1">Salud</h3>
+        <p class="text-gray-500 text-sm">7,654 empleos</p>
+      </a>
+
+      <a href="#" class="bg-white rounded-xl p-6 text-center shadow-md hover:bg-indigo-50 transition animate-fade-in" style="animation-delay: 0.4s">
+        <div class="rounded-full bg-purple-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg text-gray-800 mb-1">Negocios</h3>
+        <p class="text-gray-500 text-sm">6,842 empleos</p>
+      </a>
+
+      <a href="#" class="bg-white rounded-xl p-6 text-center shadow-md hover:bg-indigo-50 transition animate-fade-in" style="animation-delay: 0.5s">
+        <div class="rounded-full bg-yellow-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg text-gray-800 mb-1">Diseño</h3>
+        <p class="text-gray-500 text-sm">4,267 empleos</p>
+      </a>
+
+      <a href="#" class="bg-white rounded-xl p-6 text-center shadow-md hover:bg-indigo-50 transition animate-fade-in" style="animation-delay: 0.6s">
+        <div class="rounded-full bg-pink-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg text-gray-800 mb-1">Educación</h3>
+        <p class="text-gray-500 text-sm">3,521 empleos</p>
+      </a>
+
+      <a href="#" class="bg-white rounded-xl p-6 text-center shadow-md hover:bg-indigo-50 transition animate-fade-in" style="animation-delay: 0.7s">
+        <div class="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg text-gray-800 mb-1">Ingeniería</h3>
+        <p class="text-gray-500 text-sm">9,132 empleos</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Empleos Destacados -->
+<section class="py-20 bg-gradient-to-b from-white to-gray-100">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-800">🌟 Empleos Destacados</h2>
+      <a href="src/empleos.html" class="text-blue-600 hover:text-blue-800 font-semibold transition-all duration-200">Ver Todos los Empleos →</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Empleo ejemplo -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 animate-slide-up" style="animation-delay: 0s">
+        <div class="flex items-start">
+          <div class="h-12 w-12 bg-gray-200 rounded-md overflow-hidden">
+            <img src="https://images.pexels.com/photos/15351656/pexels-photo-15351656/free-photo-of-google-logo-displayed-on-phone-screen.jpeg" alt="Google" class="h-full w-full object-cover">
+          </div>
+          <div class="ml-4">
+            <h3 class="text-xl font-semibold text-gray-900">Desarrollador Frontend Senior</h3>
+            <p class="text-gray-600">Google</p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">Remoto</span>
+              <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-medium">Tiempo completo</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <div class="flex justify-between text-sm text-gray-500">
+            <span>$120K - $150K</span>
+            <span>Publicado hace 2 días</span>
+          </div>
+          <p class="mt-3 text-gray-600 line-clamp-3">Buscamos un desarrollador frontend con experiencia en React, TypeScript y tecnologías modernas para construir aplicaciones web robustas.</p>
+          <div class="mt-5 flex justify-between items-center">
+            <button class="text-blue-600 hover:text-blue-800 text-sm flex items-center gap-1 transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7" /></svg>Guardar</button>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition">Postularme</a>
+          </div>
+        </div>
+      </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 animate-slide-up" style="animation-delay: 0s">
+        <div class="flex items-start">
+          <div class="h-12 w-12 bg-gray-200 rounded-md overflow-hidden">
+            <img src="https://images.pexels.com/photos/15351656/pexels-photo-15351656/free-photo-of-google-logo-displayed-on-phone-screen.jpeg" alt="Google" class="h-full w-full object-cover">
+          </div>
+          <div class="ml-4">
+            <h3 class="text-xl font-semibold text-gray-900">Desarrollador Frontend Senior</h3>
+            <p class="text-gray-600">Google</p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">Remoto</span>
+              <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-medium">Tiempo completo</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <div class="flex justify-between text-sm text-gray-500">
+            <span>$120K - $150K</span>
+            <span>Publicado hace 2 días</span>
+          </div>
+          <p class="mt-3 text-gray-600 line-clamp-3">Buscamos un desarrollador frontend con experiencia en React, TypeScript y tecnologías modernas para construir aplicaciones web robustas.</p>
+          <div class="mt-5 flex justify-between items-center">
+            <button class="text-blue-600 hover:text-blue-800 text-sm flex items-center gap-1 transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7" /></svg>Guardar</button>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition">Postularme</a>
+          </div>
+        </div>
+      </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 animate-slide-up" style="animation-delay: 0s">
+        <div class="flex items-start">
+          <div class="h-12 w-12 bg-gray-200 rounded-md overflow-hidden">
+            <img src="https://images.pexels.com/photos/15351656/pexels-photo-15351656/free-photo-of-google-logo-displayed-on-phone-screen.jpeg" alt="Google" class="h-full w-full object-cover">
+          </div>
+          <div class="ml-4">
+            <h3 class="text-xl font-semibold text-gray-900">Desarrollador Frontend Senior</h3>
+            <p class="text-gray-600">Google</p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">Remoto</span>
+              <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-medium">Tiempo completo</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <div class="flex justify-between text-sm text-gray-500">
+            <span>$120K - $150K</span>
+            <span>Publicado hace 2 días</span>
+          </div>
+          <p class="mt-3 text-gray-600 line-clamp-3">Buscamos un desarrollador frontend con experiencia en React, TypeScript y tecnologías modernas para construir aplicaciones web robustas.</p>
+          <div class="mt-5 flex justify-between items-center">
+            <button class="text-blue-600 hover:text-blue-800 text-sm flex items-center gap-1 transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7" /></svg>Guardar</button>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition">Postularme</a>
+          </div>
+        </div>
+      </div>
+      <!-- Copia y modifica los siguientes bloques para otros empleos -->
+
+    </div>
+  </div>
+</section>
+
+   <!-- Cómo Funciona JobAI -->
+<section class="py-20 bg-gradient-to-b from-white via-gray-50 to-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">¿Cómo Funciona JobAI?</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <!-- Paso 1 -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg text-center transition-transform hover:-translate-y-2 hover:shadow-xl duration-300">
+        <div class="w-20 h-20 flex items-center justify-center rounded-full bg-purple-100 mx-auto mb-6">
+          <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Sube tu CV</h3>
+        <p class="text-gray-600">Carga tu currículum y deja que nuestra IA analice tus habilidades y objetivos profesionales.</p>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg text-center transition-transform hover:-translate-y-2 hover:shadow-xl duration-300">
+        <div class="w-20 h-20 flex items-center justify-center rounded-full bg-pink-100 mx-auto mb-6">
+          <svg class="w-10 h-10 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Match Inteligente</h3>
+        <p class="text-gray-600">Nuestra IA avanzada compara tu perfil con miles de empleos y encuentra las mejores coincidencias.</p>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg text-center transition-transform hover:-translate-y-2 hover:shadow-xl duration-300">
+        <div class="w-20 h-20 flex items-center justify-center rounded-full bg-blue-100 mx-auto mb-6">
+          <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Postúlate con Confianza</h3>
+        <p class="text-gray-600">Aplica a empleos que se ajusten a tu perfil y recibe consejos personalizados para tener éxito.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+   <!-- Análisis de CV con IA - CTA -->
+<section class="py-20 bg-gradient-to-r from-purple-700 via-pink-600 to-blue-600 text-white">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col-reverse md:flex-row items-center gap-10">
+      
+      <!-- Texto CTA -->
+      <div class="md:w-1/2">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-5 leading-tight">Deja que la IA encuentre el trabajo perfecto para ti</h2>
+        <p class="text-lg mb-6 text-white/90">Carga tu currículum y nuestra inteligencia artificial lo analizará para recomendarte oportunidades que encajen con tu perfil y aspiraciones.</p>
+        <a href="src/SubirCv.html" class="inline-block px-6 py-3 rounded-full bg-white text-purple-700 font-semibold hover:bg-gray-100 transition duration-300 shadow-md">Subir CV Ahora</a>
+      </div>
+
+      <!-- Imagen -->
+      <div class="md:w-1/2 flex justify-center">
+        <img src="https://images.pexels.com/photos/3183151/pexels-photo-3183151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Análisis de CV por IA"
+          class="rounded-2xl shadow-2xl max-w-full h-auto object-cover"
+          style="max-height: 400px;" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Mejorado -->
+<section class="py-20 bg-gradient-to-r from-indigo-50 via-white to-indigo-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Lo Que Dicen Los Usuarios</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Testimonio 1 -->
+      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 flex flex-col">
+        <div class="flex items-center mb-4">
+          <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=60" class="h-14 w-14 rounded-full object-cover border-2 border-indigo-200" alt="Sarah Johnson">
+          <div class="ml-4">
+            <h4 class="text-lg font-semibold text-gray-800">Sarah Johnson</h4>
+            <p class="text-sm text-gray-500">Software Engineer</p>
+          </div>
+        </div>
+        <div class="flex text-yellow-400 mb-3">
+          <!-- 5 estrellas -->
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="..."/></svg>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="..."/></svg>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="..."/></svg>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="..."/></svg>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="..."/></svg>
+        </div>
+        <p class="text-gray-600 leading-relaxed text-justify">"La función de coincidencia con IA es increíble. Subí mi currículum y recibí recomendaciones que se ajustaban perfectamente a mis habilidades. ¡Conseguí entrevistas para todos los puestos que apliqué!"</p>
+      </div>
+
+      <!-- Testimonio 2 -->
+      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 flex flex-col">
+        <div class="flex items-center mb-4">
+          <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=60" class="h-14 w-14 rounded-full object-cover border-2 border-indigo-200" alt="Michael Davis">
+          <div class="ml-4">
+            <h4 class="text-lg font-semibold text-gray-800">Michael Davis</h4>
+            <p class="text-sm text-gray-500">Marketing Specialist</p>
+          </div>
+        </div>
+        <div class="flex text-yellow-400 mb-3">
+          <!-- 5 estrellas -->
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="..."/></svg>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="..."/></svg>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="..."/></svg>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="..."/></svg>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="..."/></svg>
+        </div>
+        <p class="text-gray-600 leading-relaxed text-justify">"Después de meses sin éxito, probé JobAI y encontré un puesto en marketing que era justo lo que buscaba. La plataforma es intuitiva y la IA realmente funciona."</p>
+      </div>
+
+      <!-- Testimonio 3 -->
+      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 flex flex-col">
+        <div class="flex items-center mb-4">
+          <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=60" class="h-14 w-14 rounded-full object-cover border-2 border-indigo-200" alt="Emily Rodriguez">
+          <div class="ml-4">
+            <h4 class="text-lg font-semibold text-gray-800">Emily Rodriguez</h4>
+            <p class="text-sm text-gray-500">UI/UX Designer</p>
+          </div>
+        </div>
+        <div class="flex text-yellow-400 mb-3">
+          <!-- 5 estrellas -->
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="..."/></svg>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="..."/></svg>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="..."/></svg>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="..."/></svg>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="..."/></svg>
+        </div>
+        <p class="text-gray-600 leading-relaxed text-justify">"Gracias a JobAI conseguí el trabajo de mis sueños. Las sugerencias impulsadas por IA y la interfaz clara hicieron que buscar empleo fuera rápido y sin estrés."</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ <!-- FAQ Section -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
+    <div class="max-w-3xl mx-auto space-y-6">
+
+      <!-- Pregunta 1 -->
+      <div class="bg-white rounded-xl shadow p-6 transition-all duration-300">
+        <button class="flex justify-between items-center w-full text-left toggle-faq">
+          <h3 class="text-lg font-semibold text-gray-900">¿Cómo puedo acceder al contenido del curso?</h3>
+          <svg class="w-5 h-5 text-gray-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="faq-content mt-3 text-gray-600 hidden">
+          <p>Una vez completes el pago, recibirás un correo con acceso inmediato al curso desde tu panel de usuario.</p>
+        </div>
+      </div>
+
+      <!-- Pregunta 2 -->
+      <div class="bg-white rounded-xl shadow p-6 transition-all duration-300">
+        <button class="flex justify-between items-center w-full text-left toggle-faq">
+          <h3 class="text-lg font-semibold text-gray-900">¿Puedo acceder desde mi celular o tablet?</h3>
+          <svg class="w-5 h-5 text-gray-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="faq-content mt-3 text-gray-600 hidden">
+          <p>Sí, puedes acceder desde cualquier dispositivo con conexión a internet, ya sea móvil, tablet o computadora.</p>
+        </div>
+      </div>
+
+      <!-- Pregunta 3 -->
+      <div class="bg-white rounded-xl shadow p-6 transition-all duration-300">
+        <button class="flex justify-between items-center w-full text-left toggle-faq">
+          <h3 class="text-lg font-semibold text-gray-900">¿Cuánto tiempo tendré acceso al curso?</h3>
+          <svg class="w-5 h-5 text-gray-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="faq-content mt-3 text-gray-600 hidden">
+          <p>El acceso es de por vida. Puedes revisar el contenido cuantas veces quieras y cuando lo necesites.</p>
+        </div>
+      </div>
+
+      <!-- Pregunta 4 -->
+      <div class="bg-white rounded-xl shadow p-6 transition-all duration-300">
+        <button class="flex justify-between items-center w-full text-left toggle-faq">
+          <h3 class="text-lg font-semibold text-gray-900">¿Recibiré un certificado al finalizar?</h3>
+          <svg class="w-5 h-5 text-gray-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="faq-content mt-3 text-gray-600 hidden">
+          <p>Sí, una vez completes todos los módulos y apruebes el examen final, recibirás un certificado digital.</p>
+        </div>
+      </div>
+
+      <!-- Pregunta 5 -->
+      <div class="bg-white rounded-xl shadow p-6 transition-all duration-300">
+        <button class="flex justify-between items-center w-full text-left toggle-faq">
+          <h3 class="text-lg font-semibold text-gray-900">¿Puedo solicitar un reembolso si no me gusta?</h3>
+          <svg class="w-5 h-5 text-gray-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="faq-content mt-3 text-gray-600 hidden">
+          <p>Claro, ofrecemos una garantía de devolución de dinero de 7 días desde la compra del curso.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+   <!-- Footer Mejorado -->
+<footer class="bg-gray-900 text-white pt-16 pb-10 rounded-t-3xl shadow-inner">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+      
+      <!-- Logo y redes -->
+      <div>
+        <h3 class="text-2xl font-bold mb-4 text-indigo-400">JobAI</h3>
+        <p class="text-gray-400 mb-6 leading-relaxed">Conectamos talento con oportunidades mediante coincidencia de empleos potenciada por IA.</p>
+        <div class="flex space-x-4">
+          <!-- Facebook -->
+          <a href="#" class="text-gray-400 hover:text-indigo-300 transition">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="..."/></svg>
+          </a>
+          <!-- Twitter -->
+          <a href="#" class="text-gray-400 hover:text-indigo-300 transition">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="..."/></svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="#" class="text-gray-400 hover:text-indigo-300 transition">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="..."/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Para buscadores de empleo -->
+      <div>
+        <h4 class="text-lg font-semibold text-indigo-300 mb-4">Para Candidatos</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#" class="hover:text-white transition">Buscar Empleos</a></li>
+          <li><a href="#" class="hover:text-white transition">Subir Currículum</a></li>
+          <li><a href="#" class="hover:text-white transition">IA de Coincidencia</a></li>
+          <li><a href="#" class="hover:text-white transition">Recursos Profesionales</a></li>
+          <li><a href="#" class="hover:text-white transition">Alertas de Empleo</a></li>
+        </ul>
+      </div>
+
+      <!-- Para empleadores -->
+      <div>
+        <h4 class="text-lg font-semibold text-indigo-300 mb-4">Para Empresas</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#" class="hover:text-white transition">Publicar Oferta</a></li>
+          <li><a href="#" class="hover:text-white transition">Buscar Currículums</a></li>
+          <li><a href="#" class="hover:text-white transition">Recursos Empresariales</a></li>
+          <li><a href="#" class="hover:text-white transition">Planes y Precios</a></li>
+          <li><a href="#" class="hover:text-white transition">Soluciones Corporativas</a></li>
+        </ul>
+      </div>
+
+      <!-- Compañía -->
+      <div>
+        <h4 class="text-lg font-semibold text-indigo-300 mb-4">Compañía</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#" class="hover:text-white transition">Sobre Nosotros</a></li>
+          <li><a href="#" class="hover:text-white transition">Nuestro Equipo</a></li>
+          <li><a href="#" class="hover:text-white transition">Carreras</a></li>
+          <li><a href="#" class="hover:text-white transition">Prensa</a></li>
+          <li><a href="#" class="hover:text-white transition">Contáctanos</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Línea inferior -->
+    <div class="border-t border-gray-700 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+      <p>© 2025 JobAI. Todos los derechos reservados.</p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="#" class="hover:text-white transition">Política de Privacidad</a>
+        <a href="#" class="hover:text-white transition">Términos del Servicio</a>
+        <a href="#" class="hover:text-white transition">Política de Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Script básico para toggle del menú móvil -->
+<script>
+  const menuBtn = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+<!-- Script para mostrar la información de cada pregunta y cambiar el icono -->
+    <script>
+  document.querySelectorAll('.toggle-faq').forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('svg');
+
+      content.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
+    });
+  });
+</script>
+
+  </body>
+</html>

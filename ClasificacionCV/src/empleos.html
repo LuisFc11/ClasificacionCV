@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Jobs - JobAI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+ <!-- Header Responsive Mejorado -->
+<header class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      
+      <!-- Logo -->
+      <a href="../index.html" class="flex items-center text-2xl font-extrabold text-indigo-600">
+        Job<span class="text-gray-800">AI</span>
+      </a>
+
+      <!-- Navegación Desktop -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="../index.html" class="text-gray-700 hover:text-indigo-600 font-medium transition">Inicio</a>
+        <a href="#" class="text-gray-700 hover:text-indigo-600 font-medium transition">Empleos</a>
+        <a href="SubirCv.html" class="text-gray-700 hover:text-indigo-600 font-medium transition">Match con IA</a>
+      </nav>
+
+      <!-- Botones Desktop -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="#" class="px-4 py-2 rounded-md border border-indigo-600 text-indigo-600 hover:bg-indigo-50 transition font-medium">Iniciar sesión</a>
+        <a href="#" class="px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition font-medium">Registrarse</a>
+      </div>
+
+      <!-- Botón Menú Móvil -->
+      <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menú Móvil Elegante -->
+    <div id="mobile-menu" class="md:hidden hidden mt-2 bg-white shadow-lg rounded-xl transition-all duration-300 overflow-hidden">
+      <div class="px-6 py-4 space-y-3 text-center">
+        <a href="../index.html" class="block text-gray-800 font-semibold hover:text-indigo-600 transition">Inicio</a>
+        <a href="#" class="block text-gray-800 font-semibold hover:text-indigo-600 transition">Empleos</a>
+        <a href="SubirCv.html" class="block text-gray-800 font-semibold hover:text-indigo-600 transition">Match con IA</a>
+      </div>
+      <div class="border-t border-gray-100 px-6 py-4 space-y-2">
+        <a href="#" class="block w-full text-center py-2 border border-indigo-600 text-indigo-600 rounded-md hover:bg-indigo-50 transition font-medium">Iniciar sesión</a>
+        <a href="#" class="block w-full text-center py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition font-medium">Registrarse</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <!-- Job Search Banner -->
+    <section class="bg-blue-600 py-16">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl font-bold text-white mb-8 text-center">
+          Encuentra el trabajo ideal para ti
+        </h1>
+
+        <div class="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
+          <form class="flex flex-col md:flex-row md:items-center gap-4">
+            <!-- Input: Palabras clave -->
+            <div class="relative w-full">
+              <label for="keywords" class="sr-only"
+                >Palabras clave o título</label
+              >
+              <div
+                class="absolute inset-y-0 left-3 flex items-center pointer-events-none"
+              >
+                <svg
+                  class="h-5 w-5 text-blue-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+              <input
+                id="keywords"
+                name="keywords"
+                type="text"
+                class="w-full pl-10 pr-4 py-3 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-blue-800 placeholder-blue-500 bg-blue-50"
+                placeholder="Puesto, palabra clave o empresa"
+              />
+            </div>
+
+            <!-- Input: Ubicación -->
+            <div class="relative w-full">
+              <label for="location" class="sr-only">Ubicación</label>
+              <div
+                class="absolute inset-y-0 left-3 flex items-center pointer-events-none"
+              >
+                <svg
+                  class="h-5 w-5 text-blue-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+              <input
+                id="location"
+                name="location"
+                type="text"
+                class="w-full pl-10 pr-4 py-3 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-blue-800 placeholder-blue-500 bg-blue-50"
+                placeholder="Ciudad, país o remoto"
+              />
+            </div>
+
+            <!-- Botón de búsqueda -->
+            <button
+              type="submit"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg w-full py-3 px-4 rounded-lg transition-all duration-300 shadow-md"
+            >
+              Buscar empleos
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-12 bg-gray-50 min-h-screen">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row gap-10">
+         
+         <!-- Sidebar de Filtros -->
+<div class="lg:w-1/4">
+  <div class="bg-white rounded-lg shadow p-6 sticky top-24">
+    <h2 class="text-xl font-semibold mb-4">Filtros</h2>
+    
+    <!-- Fecha de Publicación -->
+    <div class="mb-6">
+      <h3 class="font-medium text-gray-900 mb-2">Fecha de publicación</h3>
+      <div class="space-y-2">
+        <div class="flex items-center">
+          <input id="date-any" name="date" type="radio" class="h-4 w-4 text-primary-600 focus:ring-primary-500">
+          <label for="date-any" class="ml-2 text-gray-700">Cualquier fecha</label>
+        </div>
+        <div class="flex items-center">
+          <input id="date-day" name="date" type="radio" class="h-4 w-4 text-primary-600 focus:ring-primary-500">
+          <label for="date-day" class="ml-2 text-gray-700">Últimas 24 horas</label>
+        </div>
+        <div class="flex items-center">
+          <input id="date-week" name="date" type="radio" class="h-4 w-4 text-primary-600 focus:ring-primary-500" checked>
+          <label for="date-week" class="ml-2 text-gray-700">Última semana</label>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Tipo de trabajo -->
+    <div class="mb-6">
+      <h3 class="font-medium text-gray-900 mb-2">Tipo de trabajo</h3>
+      <div class="space-y-2">
+        <div class="flex items-center">
+          <input id="type-fulltime" name="type" type="checkbox" class="h-4 w-4 text-primary-600 focus:ring-primary-500" checked>
+          <label for="type-fulltime" class="ml-2 text-gray-700">Tiempo completo</label>
+        </div>
+        <div class="flex items-center">
+          <input id="type-parttime" name="type" type="checkbox" class="h-4 w-4 text-primary-600 focus:ring-primary-500">
+          <label for="type-parttime" class="ml-2 text-gray-700">Medio tiempo</label>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Nivel de experiencia -->
+    <div class="mb-6">
+      <h3 class="font-medium text-gray-900 mb-2">Nivel de experiencia</h3>
+      <div class="space-y-2">
+        <div class="flex items-center">
+          <input id="exp-mid" name="exp" type="checkbox" class="h-4 w-4 text-primary-600 focus:ring-primary-500" checked>
+          <label for="exp-mid" class="ml-2 text-gray-700">Nivel medio</label>
+        </div>
+        <div class="flex items-center">
+          <input id="exp-senior" name="exp" type="checkbox" class="h-4 w-4 text-primary-600 focus:ring-primary-500">
+          <label for="exp-senior" class="ml-2 text-gray-700">Nivel senior</label>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Opciones remotas -->
+    <div class="mb-6">
+      <h3 class="font-medium text-gray-900 mb-2">Opciones remotas</h3>
+      <div class="space-y-2">
+        <div class="flex items-center">
+          <input id="remote-yes" name="remote" type="checkbox" class="h-4 w-4 text-primary-600 focus:ring-primary-500" checked>
+          <label for="remote-yes" class="ml-2 text-gray-700">Remoto</label>
+        </div>
+        
+        <div class="flex items-center">
+          <input id="remote-onsite" name="remote" type="checkbox" class="h-4 w-4 text-primary-600 focus:ring-primary-500">
+          <label for="remote-onsite" class="ml-2 text-gray-700">Presencial</label>
+        </div>
+      </div>
+    </div>
+    
+    <button class="btn btn-outline w-full">Aplicar filtros</button>
+  </div>
+</div>
+
+
+          <!-- Job Listings -->
+          <main class="lg:w-3/4">
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+              <div
+                class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4"
+              >
+                <div>
+                  <h2 class="text-3xl font-bold text-gray-900">
+                    2,453 jobs found
+                  </h2>
+                  <p class="text-gray-600 mt-1">
+                    Based on your search criteria
+                  </p>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <label for="sort" class="text-gray-700 font-medium"
+                    >Sort by:</label
+                  >
+                  <select
+                    id="sort"
+                    class="border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  >
+                    <option>Relevance</option>
+                    <option>Date: newest first</option>
+                    <option>Date: oldest first</option>
+                    <option>Salary: high to low</option>
+                    <option>Salary: low to high</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Job List -->
+              <div class="space-y-8">
+                <!-- Job Item 1 -->
+                <article
+                  class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div class="flex items-start gap-6">
+                    <div
+                      class="flex-shrink-0 w-16 h-16 bg-gray-100 rounded-lg overflow-hidden shadow-sm"
+                    >
+                      <img
+                        src="https://images.pexels.com/photos/15351656/pexels-photo-15351656/free-photo-of-google-logo-displayed-on-phone-screen.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Google"
+                        class="object-cover w-full h-full"
+                      />
+                    </div>
+
+                    <div class="flex-1">
+                      <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-xl font-semibold text-gray-900">
+                          Senior Frontend Developer
+                        </h3>
+                        <span class="text-indigo-600 font-semibold text-lg"
+                          >$120K - $150K</span
+                        >
+                      </div>
+                      <p class="text-gray-700 mb-3">Google • Remote</p>
+
+                      <div class="flex flex-wrap gap-3 mb-4">
+                        <span
+                          class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >Remote</span
+                        >
+                        <span
+                          class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >Full-time</span
+                        >
+                        <span
+                          class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >React</span
+                        >
+                        <span
+                          class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >TypeScript</span
+                        >
+                        <span
+                          class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >JavaScript</span
+                        >
+                      </div>
+
+                      <p class="text-gray-600 mb-6 leading-relaxed">
+                        We're looking for an experienced Frontend Developer to
+                        join our team. You'll be responsible for building web
+                        applications using React, TypeScript, and modern web
+                        technologies.
+                      </p>
+
+                      <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500"
+                          >Posted 2 days ago</span
+                        >
+                        <div class="flex gap-4">
+                          <button
+                            class="border border-indigo-600 text-indigo-600 font-medium rounded-md px-4 py-1 hover:bg-indigo-50 transition"
+                          >
+                            Save
+                          </button>
+                          <a
+                            href="#"
+                            class="bg-indigo-600 text-white font-semibold rounded-md px-5 py-2 hover:bg-indigo-700 transition"
+                          >
+                            Apply Now
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                    <!-- Job Item 1 -->
+                <article
+                  class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div class="flex items-start gap-6">
+                    <div
+                      class="flex-shrink-0 w-16 h-16 bg-gray-100 rounded-lg overflow-hidden shadow-sm"
+                    >
+                      <img
+                        src="https://images.pexels.com/photos/15351656/pexels-photo-15351656/free-photo-of-google-logo-displayed-on-phone-screen.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Google"
+                        class="object-cover w-full h-full"
+                      />
+                    </div>
+
+                    <div class="flex-1">
+                      <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-xl font-semibold text-gray-900">
+                          Senior Frontend Developer
+                        </h3>
+                        <span class="text-indigo-600 font-semibold text-lg"
+                          >$120K - $150K</span
+                        >
+                      </div>
+                      <p class="text-gray-700 mb-3">Google • Remote</p>
+
+                      <div class="flex flex-wrap gap-3 mb-4">
+                        <span
+                          class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >Remote</span
+                        >
+                        <span
+                          class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >Full-time</span
+                        >
+                        <span
+                          class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >React</span
+                        >
+                        <span
+                          class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >TypeScript</span
+                        >
+                        <span
+                          class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >JavaScript</span
+                        >
+                      </div>
+
+                      <p class="text-gray-600 mb-6 leading-relaxed">
+                        We're looking for an experienced Frontend Developer to
+                        join our team. You'll be responsible for building web
+                        applications using React, TypeScript, and modern web
+                        technologies.
+                      </p>
+
+                      <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500"
+                          >Posted 2 days ago</span
+                        >
+                        <div class="flex gap-4">
+                          <button
+                            class="border border-indigo-600 text-indigo-600 font-medium rounded-md px-4 py-1 hover:bg-indigo-50 transition"
+                          >
+                            Save
+                          </button>
+                          <a
+                            href="#"
+                            class="bg-indigo-600 text-white font-semibold rounded-md px-5 py-2 hover:bg-indigo-700 transition"
+                          >
+                            Apply Now
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+
+                    <!-- Job Item 1 -->
+                <article
+                  class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div class="flex items-start gap-6">
+                    <div
+                      class="flex-shrink-0 w-16 h-16 bg-gray-100 rounded-lg overflow-hidden shadow-sm"
+                    >
+                      <img
+                        src="https://images.pexels.com/photos/15351656/pexels-photo-15351656/free-photo-of-google-logo-displayed-on-phone-screen.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Google"
+                        class="object-cover w-full h-full"
+                      />
+                    </div>
+
+                    <div class="flex-1">
+                      <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-xl font-semibold text-gray-900">
+                          Senior Frontend Developer
+                        </h3>
+                        <span class="text-indigo-600 font-semibold text-lg"
+                          >$120K - $150K</span
+                        >
+                      </div>
+                      <p class="text-gray-700 mb-3">Google • Remote</p>
+
+                      <div class="flex flex-wrap gap-3 mb-4">
+                        <span
+                          class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >Remote</span
+                        >
+                        <span
+                          class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >Full-time</span
+                        >
+                        <span
+                          class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >React</span
+                        >
+                        <span
+                          class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >TypeScript</span
+                        >
+                        <span
+                          class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >JavaScript</span
+                        >
+                      </div>
+
+                      <p class="text-gray-600 mb-6 leading-relaxed">
+                        We're looking for an experienced Frontend Developer to
+                        join our team. You'll be responsible for building web
+                        applications using React, TypeScript, and modern web
+                        technologies.
+                      </p>
+
+                      <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500"
+                          >Posted 2 days ago</span
+                        >
+                        <div class="flex gap-4">
+                          <button
+                            class="border border-indigo-600 text-indigo-600 font-medium rounded-md px-4 py-1 hover:bg-indigo-50 transition"
+                          >
+                            Save
+                          </button>
+                          <a
+                            href="#"
+                            class="bg-indigo-600 text-white font-semibold rounded-md px-5 py-2 hover:bg-indigo-700 transition"
+                          >
+                            Apply Now
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+               
+                <!-- Pagination -->
+                <div class="mt-8 flex justify-center">
+                  <nav
+                    class="inline-flex items-center space-x-1 rounded-md shadow-sm"
+                    aria-label="Pagination"
+                  >
+                    <!-- Previous Button -->
+                    <a
+                      href="#"
+                      class="inline-flex items-center px-3 py-2 rounded-l-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      aria-label="Previous"
+                    >
+                      <svg
+                        class="h-5 w-5"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M15 19l-7-7 7-7"
+                        />
+                      </svg>
+                    </a>
+
+                    <!-- Page Numbers -->
+                    <a
+                      href="#"
+                      class="inline-flex items-center px-4 py-2 text-sm font-medium border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      >1</a
+                    >
+                    <a
+                      href="#"
+                      class="inline-flex items-center px-4 py-2 text-sm font-medium border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      >2</a
+                    >
+                    <a
+                      href="#"
+                      class="inline-flex items-center px-4 py-2 text-sm font-medium border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      >3</a
+                    >
+
+                    <span
+                      class="inline-flex items-center px-4 py-2 text-sm text-gray-500"
+                      >...</span
+                    >
+
+                    <a
+                      href="#"
+                      class="inline-flex items-center px-4 py-2 text-sm font-medium border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      >8</a
+                    >
+                    <a
+                      href="#"
+                      class="inline-flex items-center px-4 py-2 text-sm font-medium border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      >9</a
+                    >
+
+                    <!-- Next Button -->
+                    <a
+                      href="#"
+                      class="inline-flex items-center px-3 py-2 rounded-r-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      aria-label="Next"
+                    >
+                      <svg
+                        class="h-5 w-5"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </a>
+                  </nav>
+                </div>
+
+              </div>
+
+            </div>
+          </main>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Mejorado -->
+    <footer
+      class="bg-gray-900 text-white pt-16 pb-10 rounded-t-3xl shadow-inner"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <!-- Logo y redes -->
+          <div>
+            <h3 class="text-2xl font-bold mb-4 text-indigo-400">JobAI</h3>
+            <p class="text-gray-400 mb-6 leading-relaxed">
+              Conectamos talento con oportunidades mediante coincidencia de
+              empleos potenciada por IA.
+            </p>
+            <div class="flex space-x-4">
+              <!-- Facebook -->
+              <a
+                href="#"
+                class="text-gray-400 hover:text-indigo-300 transition"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="..." />
+                </svg>
+              </a>
+              <!-- Twitter -->
+              <a
+                href="#"
+                class="text-gray-400 hover:text-indigo-300 transition"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="..." />
+                </svg>
+              </a>
+              <!-- LinkedIn -->
+              <a
+                href="#"
+                class="text-gray-400 hover:text-indigo-300 transition"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="..." />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Para buscadores de empleo -->
+          <div>
+            <h4 class="text-lg font-semibold text-indigo-300 mb-4">
+              Para Candidatos
+            </h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Buscar Empleos</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Subir Currículum</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >IA de Coincidencia</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Recursos Profesionales</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Alertas de Empleo</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Para empleadores -->
+          <div>
+            <h4 class="text-lg font-semibold text-indigo-300 mb-4">
+              Para Empresas
+            </h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Publicar Oferta</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Buscar Currículums</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Recursos Empresariales</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Planes y Precios</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Soluciones Corporativas</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Compañía -->
+          <div>
+            <h4 class="text-lg font-semibold text-indigo-300 mb-4">Compañía</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Sobre Nosotros</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Nuestro Equipo</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Carreras</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Prensa</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Contáctanos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Línea inferior -->
+        <div
+          class="border-t border-gray-700 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500"
+        >
+          <p>© 2025 JobAI. Todos los derechos reservados.</p>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" class="hover:text-white transition"
+              >Política de Privacidad</a
+            >
+            <a href="#" class="hover:text-white transition"
+              >Términos del Servicio</a
+            >
+            <a href="#" class="hover:text-white transition"
+              >Política de Cookies</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script básico para toggle del menú móvil -->
+<script>
+  const menuBtn = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+  </body>
+</html>

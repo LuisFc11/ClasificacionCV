@@ -1,0 +1,22 @@
+[
+    {
+        "nombre": "cv_web.pdf",
+        "area": "Desarrollador Web",
+        "estado": "Aprobado"
+    },
+    {
+        "nombre": "CV_FullStack_Juan_Perez.pdf",
+        "area": "Desarrollador Web",
+        "estado": "Aprobado"
+    },
+    {
+        "nombre": "CV_SeniorReact_Carlos_Ramirez.pdf",
+        "area": "Desarrollador Web",
+        "estado": "Aprobado"
+    },
+    {
+        "nombre": "cv_mobile.pdf",
+        "area": "Desarrollo de app móviles",
+        "estado": "Aprobado"
+    }
+]
