@@ -19,13 +19,13 @@
     <div class="flex justify-between items-center h-16">
       
       <!-- Logo -->
-      <a href="../index.html" class="flex items-center text-2xl font-extrabold text-indigo-600">
+      <a href="inicio.html" class="flex items-center text-2xl font-extrabold text-indigo-600">
         Job<span class="text-gray-800">AI</span>
       </a>
 
       <!-- Navegación Desktop -->
       <nav class="hidden md:flex space-x-8">
-        <a href="../index.html" class="text-gray-700 hover:text-indigo-600 font-medium transition">Inicio</a>
+        <a href="inicio.html" class="text-gray-700 hover:text-indigo-600 font-medium transition">Inicio</a>
         <a href="" class="text-gray-700 hover:text-indigo-600 font-medium transition">Empleos</a>
         <a href="#" class="text-gray-700 hover:text-indigo-600 font-medium transition">Match con IA</a>
       </nav>
@@ -53,21 +53,49 @@
   </div>
 </header>
 
-<div class="bg-gray-100 p-10 text-gray-800 font-sans">
+ <div class="bg-gray-100 px-6 py-4 text-gray-800 font-sans">
 
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="grid grid-cols-[1fr_2fr_2fr] gap-4 mx-0">
 
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <div class="mb-4 p-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 rounded font-medium col-span-full animate-fade-in">
-          {% for message in messages %}
-            <p>{{ message }}</p>
-          {% endfor %}
-        </div>
-      {% endif %}
-    {% endwith %}
+ <div class="space-y-4">
+  <div class="grid grid-cols-1 gap-4">
+    <!-- Puesto 1 -->
+    <div class="bg-white p-3 rounded-lg shadow-sm text-center hover:-translate-y-0.5 hover:shadow-md transition duration-200">
+      <div class="w-12 h-12 flex items-center justify-center rounded-full bg-purple-100 mx-auto mb-2">
+        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h3l1 2h8l1-2h3a1 1 0 011 1v2H3V4zM3 8h18v11a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+        </svg>
+      </div>
+      <h3 class="text-sm font-semibold text-gray-900 mb-1">Desarrollador Web</h3>
+      <p class="text-xs text-gray-600">Experiencia en HTML, CSS, JS. Conocimientos en frameworks como React o Vue.</p>
+    </div>
 
-    <!-- Formulario -->
+    <!-- Puesto 2 -->
+    <div class="bg-white p-3 rounded-lg shadow-sm text-center hover:-translate-y-0.5 hover:shadow-md transition duration-200">
+      <div class="w-12 h-12 flex items-center justify-center rounded-full bg-pink-100 mx-auto mb-2">
+        <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197 2.132a1 1 0 01-1.555-.832V8.532a1 1 0 011.555-.832l3.197 2.132a1 1 0 010 1.664z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12A9 9 0 113 12a9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <h3 class="text-sm font-semibold text-gray-900 mb-1">Desarrollador Videojuegos</h3>
+      <p class="text-xs text-gray-600">Conocimiento en Unity o Unreal Engine, diseño de personajes y lógica de juego.</p>
+    </div>
+
+    <!-- Puesto 3 -->
+    <div class="bg-white p-3 rounded-lg shadow-sm text-center hover:-translate-y-0.5 hover:shadow-md transition duration-200">
+      <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 mx-auto mb-2">
+        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 9.75h.008v.008H9.75V9.75zm4.5 0h.008v.008h-.008V9.75zm-4.5 4.5h.008v.008H9.75v-.008zm4.5 0h.008v.008h-.008v-.008zM12 3a9 9 0 100 18 9 9 0 000-18z" />
+        </svg>
+      </div>
+      <h3 class="text-sm font-semibold text-gray-900 mb-1">Desarrollador de Apps</h3>
+      <p class="text-xs text-gray-600">Desarrollo con Flutter o React Native. Aplicaciones iOS y Android.</p>
+    </div>
+  </div>
+</div>
+
+    <!-- Columna Centro: Formulario -->
     <div class="group relative w-full">
       <div class="relative overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-blue-200">
         <div class="absolute -left-16 -top-16 h-32 w-32 rounded-full bg-blue-100 blur-2xl transition-all duration-500 group-hover:scale-150 group-hover:opacity-70"></div>
@@ -76,6 +104,16 @@
         <div class="relative p-6">
           <h2 class="text-2xl font-bold mb-4 text-gray-800">Analizar nuevo CV</h2>
           <p class="mb-6 text-gray-500 text-sm">Sube tu CV en PDF para descubrir en qué área encajas mejor.</p>
+
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              <div class="mb-4 p-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 rounded font-medium animate-fade-in">
+                {% for message in messages %}
+                  <p>{{ message }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+          {% endwith %}
 
           <form method="POST" enctype="multipart/form-data" class="space-y-6" onsubmit="mostrarCargando()">
             <div id="upload-box" class="relative rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 p-6 transition hover:border-blue-400 hover:bg-gray-100">
@@ -90,7 +128,8 @@
               <div class="space-y-4 text-center">
                 <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
                   <svg class="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
                 <p class="text-sm text-gray-600">Haz clic o arrastra tu archivo PDF aquí</p>
@@ -129,119 +168,66 @@
       </div>
     </div>
 
-   <!-- Historial -->
-<div class="space-y-4 overflow-y-auto max-h-[500px] rounded-2xl border border-gray-300 bg-white p-6 text-left shadow-lg">
-  <h2 class="text-2xl font-bold text-gray-800 mb-4">Historial de CV</h2>
+    <!-- Columna Derecha: Historial -->
+      <div class="overflow-y-auto max-h-[700px] space-y-4">
+      <h2 class="text-2xl font-bold text-gray-800 mb-4">Historial de CV</h2>
 
-  {% if historial %}
-    <ul class="space-y-3">
-      {% for item in historial %}
-        <li class="flex items-center justify-between rounded-lg border border-gray-200 bg-gray-50 p-4 shadow-sm hover:shadow-md transition">
-          <div class="flex-1 min-w-0 mr-4">
-            <a href="{{ url_for('descargar_archivo', filename=item.nombre) }}" target="_blank" class="font-semibold text-blue-600 hover:underline">
-              {{ item.nombre }}
-            </a>
-            <p class="text-xs text-gray-500 mt-1">
-              Área: <span class="font-bold text-blue-500">{{ item.area }}</span> — Estado: 
-              <span class="font-semibold {% if item.estado == 'Aprobado' %}text-green-600{% else %}text-red-600{% endif %}">
-                {{ item.estado }}
-              </span>
-            </p>
-          </div>
+      {% if historial %}
+        <ul class="space-y-3">
+          {% for item in historial %}
+            <li class="flex items-center justify-between rounded-lg border border-gray-200 bg-gray-50 p-4 shadow-sm hover:shadow-md transition">
+              <div class="flex-1 min-w-0 mr-4">
+                <a href="{{ url_for('descargar_archivo', filename=item.nombre) }}" target="_blank" class="font-semibold text-blue-600 hover:underline">
+                  {{ item.nombre }}
+                </a>
+                <p class="text-xs text-gray-500 mt-1">
+                  Área: <span class="font-bold text-blue-500">{{ item.area }}</span> — Estado: 
+                  <span class="font-semibold {% if item.estado == 'Aprobado' %}text-green-600{% else %}text-red-600{% endif %}">
+                    {{ item.estado }}
+                  </span>
+                </p>
+              </div>
 
-          <div class="flex space-x-2 items-center">
-           <!-- Botón Ver archivo con nuevo ojito -->
-<button 
-  type="button" 
-  data-url="{{ url_for('descargar_archivo', filename=item.nombre) }}"
-  onclick="verPDF(this.getAttribute('data-url'))"
-  class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 rounded-lg transition"
-  title="Ver archivo"
->
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-  </svg>
-  Ver
-</button>
+              <div class="flex space-x-2 items-center">
+                <button 
+                  type="button" 
+                  data-url="{{ url_for('descargar_archivo', filename=item.nombre) }}"
+                  onclick="verPDF(this.getAttribute('data-url'))"
+                  class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 rounded-lg transition"
+                  title="Ver archivo"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                  Ver
+                </button>
 
-
-            <!-- Botón Eliminar -->
-            <a 
-              href="{{ url_for('eliminar_historial', nombre=item.nombre) }}" 
-              title="Eliminar" 
-              class="text-gray-400 hover:text-red-600 transition"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-              </svg>
-            </a>
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p class="text-gray-500">No hay CVs analizados aún.</p>
-  {% endif %}
-</div>
-
+                <a href="{{ url_for('eliminar_historial', nombre=item.nombre) }}" class="text-gray-400 hover:text-red-600 transition" title="Eliminar">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                </a>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="text-gray-500">No hay CVs analizados aún.</p>
+      {% endif %}
+    </div>
   </div>
 
   <!-- Modal de previsualización -->
   <div id="modal-preview" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
     <div class="bg-white rounded-lg overflow-hidden w-full max-w-4xl relative animate-fade-in">
-      <button 
-        onclick="cerrarPreview()" 
-        class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-xl font-bold"
-      >×</button>
+      <button onclick="cerrarPreview()" class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-xl font-bold">×</button>
       <iframe id="preview-frame" src="" class="w-full h-[600px]"></iframe>
     </div>
   </div>
-  </div>
-
-   <!-- Cómo Funciona JobAI -->
-<section class="py-20 bg-gradient-to-b from-white via-gray-50 to-white">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">¿Cómo Funciona JobAI?</h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-      <!-- Paso 1 -->
-      <div class="bg-white p-8 rounded-2xl shadow-lg text-center transition-transform hover:-translate-y-2 hover:shadow-xl duration-300">
-        <div class="w-20 h-20 flex items-center justify-center rounded-full bg-purple-100 mx-auto mb-6">
-          <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-3">Sube tu CV</h3>
-        <p class="text-gray-600">Carga tu currículum y deja que nuestra IA analice tus habilidades y objetivos profesionales.</p>
-      </div>
-
-      <!-- Paso 2 -->
-      <div class="bg-white p-8 rounded-2xl shadow-lg text-center transition-transform hover:-translate-y-2 hover:shadow-xl duration-300">
-        <div class="w-20 h-20 flex items-center justify-center rounded-full bg-pink-100 mx-auto mb-6">
-          <svg class="w-10 h-10 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-3">Match Inteligente</h3>
-        <p class="text-gray-600">Nuestra IA avanzada compara tu perfil con miles de empleos y encuentra las mejores coincidencias.</p>
-      </div>
-
-      <!-- Paso 3 -->
-      <div class="bg-white p-8 rounded-2xl shadow-lg text-center transition-transform hover:-translate-y-2 hover:shadow-xl duration-300">
-        <div class="w-20 h-20 flex items-center justify-center rounded-full bg-blue-100 mx-auto mb-6">
-          <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-3">Postúlate con Confianza</h3>
-        <p class="text-gray-600">Aplica a empleos que se ajusten a tu perfil y recibe consejos personalizados para tener éxito.</p>
-      </div>
-    </div>
-  </div>
-</section>
+</div>
 
 
 <!-- Script básico para toggle del menú móvil -->
