@@ -13,5 +13,10 @@
         "nombre": "cv lucas vj.pdf",
         "area": "Desarrollador Videojuegos",
         "estado": "Aprobado"
+    },
+    {
+        "nombre": "CV_Mariana_Lopez_FullStack_Final.pdf",
+        "area": "Desarrollador Web",
+        "estado": "Aprobado"
     }
 ]
